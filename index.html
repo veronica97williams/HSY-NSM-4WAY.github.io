@@ -9,18 +9,34 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-    <model-viewer src="retail_display_10.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" environment-image="pillars_1k.hdr" auto-rotate>
-      <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-      </div>
-      <button slot="ar-button" id="ar-button">
-          View in your space
-      </button>
-      <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-      </div>
-    </model-viewer>  
-    <script src="script.js"></script>
+    
+  <model-viewer id="rack" camera-controls touch-action="pan-y" src="retail_display_10.glb" ar alt="A 3D model of a rack">
+  <div class="controls">
+    <div>Variant: <select id="variant"></select></div>
+  </div>
+</model-viewer>
+<script>
+const modelViewerVariants = document.querySelector("model-viewer#rack");
+const select = document.querySelector('#variant');
+  modelViewerVariants.addEventListener('load', () => {
+  const names = modelViewerVariants.availableVariants;
+  for (const name of names) {
+    const option = document.createElement('option');
+    option.value = name;
+    option.textContent = name;
+    select.appendChild(option);
+  }
+  const option = document.createElement('option');
+    option.value = 'default';
+    option.textContent = 'Default';
+    select.appendChild(option);  
+    });
+
+select.addEventListener('input', (event) => {
+  modelViewerVariants.variantName = event.target.value === 'default' ? null : event.target.value;
+});
+</script> 
+
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
   </body>
