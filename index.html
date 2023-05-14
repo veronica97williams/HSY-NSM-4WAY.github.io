@@ -41,7 +41,7 @@
   const time = performance.now();
 
   const animate = (now) => {
-    modelViewer.shadowIntensity = oscillate(0, 2, 4000, now - time);
+    modelViewer.shadowIntensity = oscillate(0, 1, 2000, now - time);
     requestAnimationFrame(animate);
   };
 
