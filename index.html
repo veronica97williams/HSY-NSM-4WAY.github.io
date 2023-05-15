@@ -7,9 +7,8 @@
   <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
   <style>
   model-viewer{
-	  width: 1000px;
-  	  height: 800px;
-	  margin: auto;
+	  width: auto;
+  	  height: auto;
 	  }
   body{
       background-color: rgb(0,155,221);
@@ -23,7 +22,7 @@
     <!-- <model-viewer> HTML element -->
     <h1>Retail Development welcomes you to NSM 2023!</h1>  
 	  
-<model-viewer src="4way.NSM.V1.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="-9.897deg 80.57deg 3.03m" field-of-view="22.98deg">
+<model-viewer src="4way.NSM.V1.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="180deg 86.14deg 3.768m" field-of-view="15.67deg" camera-target="0m 0m 0m" min-camera-orbit="180deg auto auto" max-camera-orbit="180deg auto auto">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -34,6 +33,7 @@
         <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
     </div>
 </model-viewer>
+
 
 	  
 </div> 
