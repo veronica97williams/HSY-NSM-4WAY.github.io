@@ -4,12 +4,8 @@
   <meta charset="utf-8">	
 <head>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>  
-	<script nomodule
-  src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer-legacy.js">
-</script>
   <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
   <style>
-
   model-viewer{
 	  width: 1000px;
   	  height: 800px;
@@ -25,11 +21,9 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-    <h1> The Retail Development team welcomes you to NSM 2023!</h1>  
-	  <p> To view the 4-Way rack from all sides, pinch and move two fingers directly on the rack </p>
+    <h1>Retail Development welcomes you to NSM 2023!</h1>  
 	  
-<model-viewer src="4way.NSM.V1.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="3">
-   
+<model-viewer src="retail_display_10.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -40,19 +34,6 @@
         <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
     </div>
 </model-viewer>
-<script>
-(() => {
-  const modelViewer = document.querySelector('#shadow-intensity-demo');
-  const time = performance.now();
-
-  const animate = (now) => {
-    modelViewer.shadowIntensity = oscillate(0, 1, 2000, now - time);
-    requestAnimationFrame(animate);
-  };
-
-  animate();
-})();
-</script>
 	  
 </div> 
 </body>
